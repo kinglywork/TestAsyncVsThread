@@ -16,9 +16,9 @@ namespace TestAsyncVsThread.Controllers
         {
             try
             {
-                var task = Task.Factory.StartNew(() => { new ApiService().Get(Urls.Jmeter); }, TaskCreationOptions.LongRunning);
-                Task.WaitAll(task);
-                return "ok";
+                var task = Task.Factory.StartNew(() => new ApiService().Get(Urls.Jmeter), TaskCreationOptions.LongRunning);
+                Task.WaitAll(task); // block thread!!
+                return "Done";
             }
             catch (Exception ex)
             {
