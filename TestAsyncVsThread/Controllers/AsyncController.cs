@@ -16,6 +16,7 @@ namespace TestAsyncVsThread.Controllers
         {
             try
             {
+                // use async call
                 var service = new ApiService();
                 var statusCode = await service.GetAsync(Urls.Jmeter);
                 return statusCode.ToString();

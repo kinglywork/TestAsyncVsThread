@@ -9,15 +9,16 @@ using TestAsyncVsThread.Services;
 
 namespace TestAsyncVsThread.Controllers
 {
-    public class Thread1Controller : ApiController
+    public class ThreadController : ApiController
     {
         [HttpGet]
         public string Test()
         {
             try
             {
+                // use sync call in another thread
                 var task = Task.Factory.StartNew(() => new ApiService().Get(Urls.Jmeter), TaskCreationOptions.LongRunning);
-                Task.WaitAll(task); // block thread!!
+                Task.WaitAll(task);
                 return "Done";
             }
             catch (Exception ex)

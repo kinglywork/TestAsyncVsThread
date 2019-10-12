@@ -86,8 +86,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AsyncController.cs" />
-    <Compile Include="Controllers\Thread2Controller.cs" />
-    <Compile Include="Controllers\Thread1Controller.cs" />
+    <Compile Include="Controllers\ThreadController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
