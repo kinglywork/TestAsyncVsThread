@@ -9,7 +9,7 @@ using TestAsyncVsThread.Services;
 
 namespace TestAsyncVsThread.Controllers
 {
-    public class ThreadController : ApiController
+    public class Thread1Controller : ApiController
     {
         [HttpGet]
         public string Test()
